@@ -26,6 +26,10 @@ const Create = () => {
             //When database created successfully, It should add new workout to the global state, which is in
             //front-end side
             dispatch({type: 'CREATE_REMINDERS', payload: data})
+            setName('');
+            setAge('');
+            setJob('');
+            setObjectives('');
         })
     }
 
