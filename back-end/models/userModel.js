@@ -18,6 +18,10 @@ const reminderSchema = new Schema({
     objectives:{
         type: String,
         required: true
+    },
+    image: {
+        type: String,
+        requried: true
     }
 }, {timestamps: true})
 

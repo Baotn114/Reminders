@@ -3,9 +3,9 @@ const params = require('params')
 
 
 const createReminders = async (req, res) =>{
-    const {name, age, job, objectives} = req.body;
+    const {name, age, job, objectives, image} = req.body;
     try {
-        const response = await reminderDb.create({name, age, job, objectives});
+        const response = await reminderDb.create({name, age, job, objectives, image});
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error: error.message});
