@@ -1,4 +1,4 @@
 # Reminders
-a small project to test with Axios API and DELETE function
+a small project to test with Axios API, DELETE function and store image in MongoDb (base64)
 
-![image](https://user-images.githubusercontent.com/90920248/225036674-dfa8fb6f-23a8-4e77-9f4c-e8d6bc55d1a9.png)
+![image](https://user-images.githubusercontent.com/90920248/225361504-e20224b2-9ed6-44e4-8a64-f87ee64ac361.png)
