@@ -45,6 +45,7 @@ const Create = () => {
             setAge('');
             setJob('');
             setObjectives('');
+            setImage('');
         })
     }
 
