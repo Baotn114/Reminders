@@ -23,7 +23,7 @@ const Display = () => {
         await axios.get('http://localhost:4000/api/user/getReminder')
             .then(res => {
                 const data = res.data;
-                //console.log(data);
+                console.log(data);
                 dispatch({type: 'SET_REMINDERS', payload: data});
             })
     }
@@ -48,10 +48,10 @@ const Display = () => {
     return (
         <div className="custom-display">
             {reminders && reminders.map((data_display) => (
-                <MDBCard style={{ maxWidth: '840px', margin: "0 auto", display: "block", marginBottom : "20px"}}>
+                <MDBCard style={{ maxWidth: '840px',margin: "0 auto", display: "block", marginBottom : "20px"}}>
                 <MDBRow className='g-0'>
-                    <MDBCol md='4'>
-                    <MDBCardImage src='https://loremflickr.com/320/240' alt='...' fluid/>
+                    <MDBCol md='4' >
+                    <MDBCardImage src={data_display.image} alt='your_pic' style={{ maxWidth: '100%', height: '240px'}}/>
                     </MDBCol>
                     <MDBCol md='8'>
                     <MDBCardBody>

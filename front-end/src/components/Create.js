@@ -9,7 +9,21 @@ const Create = () => {
     const [age, setAge] = useState('');
     const [job, setJob] = useState('');
     const [objectives, setObjectives] = useState('');
+    const [image, setImage] = useState('');
     const {dispatch} = useRemindersContext();
+
+    const convert64Base = (e) =>{
+        const file = e.target.files[0];
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () =>{
+            console.log(fileReader.result)
+            setImage(fileReader.result)
+        }
+        // const test = fileReader.onload();
+        // console.log(test)        
+    }
+
 
     const handleSubmit = async (e) =>{
         if (e && e.preventDefault) { e.preventDefault();}
@@ -17,7 +31,8 @@ const Create = () => {
             name: name,
             age: age,
             job: job,
-            objectives: objectives
+            objectives: objectives,
+            image: image
         })
         .then(res => {
             const data = res.data;
@@ -35,6 +50,8 @@ const Create = () => {
 
     
 
+
+
     return ( 
         <form onSubmit={handleSubmit} >
             <h3>What do you want to remember?</h3>
@@ -42,6 +59,7 @@ const Create = () => {
             <MDBInput label='Your age' id='form1' type='text' value={age}  onChange={(e) => setAge(e.target.value)} style={{margin: "10px"}}/>
             <MDBInput label='Your job' id='form1' type='text' value={job} onChange={(e) => setJob(e.target.value)} style={{margin: "10px"}}/>
             <MDBInput label='Your objectives' id='form1' type='text' value={objectives} onChange={(e) => setObjectives(e.target.value)} style={{margin: "10px"}}/>
+            <MDBInput type='file' style={{margin: "10px"}} onChange={convert64Base}></MDBInput>
             <MDBBtn color='info'>Reminder</MDBBtn>
         </form>
     );
